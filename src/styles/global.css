@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0a0a0a;
+  --color-foreground: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-accent: #6366f1;
+  --color-accent-muted: #818cf8;
+  --color-border: #1e293b;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-foreground font-sans antialiased selection:bg-accent/20 selection:text-accent;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+@layer utilities {
+  .container-custom {
+    @apply mx-auto px-6 max-w-4xl;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-accent to-accent-muted;
+  }
+
+  .glass {
+    @apply bg-black/40 backdrop-blur-md border-b border-white/5 shadow-2xl;
+  }
+}

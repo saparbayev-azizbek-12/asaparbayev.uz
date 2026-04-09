@@ -1,0 +1,55 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import ProjectCard from './ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'Portfolio',
+    description: 'Selected work and personal projects showcasing my developer journey.',
+    href: 'https://portfolio.asaparbayev.uz',
+    tag: 'Web'
+  },
+  {
+    title: 'AveronAI',
+    description: 'A real-time AI chat application with advanced features and minimalist design.',
+    href: 'https://averon.asaparbayev.uz',
+    tag: 'AI'
+  },
+  {
+    title: 'AI Journal',
+    description: 'Notes, homework, and practical AI experiments focused on LLMs and Machine Learning.',
+    href: 'https://ai-journal.asaparbayev.uz',
+    tag: 'AI'
+  },
+  {
+    title: 'ML Zone',
+    description: 'An intelligent examination platform with automated grading and proctoring features.',
+    href: 'https://ml-zone.asaparbayev.uz',
+    tag: 'ML'
+  }
+];
+---
+
+<section id="projects" class="py-24 md:py-32">
+  <div class="container-custom">
+    <SectionHeader 
+      title="Projects" 
+      subtitle="A collection of my recent work across web development, AI, and software engineering."
+    />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project) => (
+        <ProjectCard {...project} />
+      ))}
+      
+      <!-- Future Project Placeholder -->
+      <div class="p-8 border border-dashed border-border rounded-2xl flex flex-col items-center justify-center text-center opacity-60">
+        <div class="h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Future Project</h3>
+        <p class="text-sm text-slate-500">Coming soon</p>
+      </div>
+    </div>
+  </div>
+</section>

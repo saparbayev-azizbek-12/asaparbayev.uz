@@ -1,0 +1,28 @@
+---
+import SocialButtons from './SocialButtons.astro';
+---
+
+<section class="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center text-center px-6">
+  <div class="relative mb-8 group">
+    <!-- Glowing ring -->
+    <div class="absolute inset-0 rounded-full bg-linear-to-tr from-accent to-accent-muted opacity-50 blur-xl group-hover:opacity-80 transition-opacity duration-500 animate-pulse"></div>
+    
+    <div class="relative h-48 w-48 rounded-full border-2 border-accent/30 overflow-hidden ring-4 ring-black ring-offset-0">
+      <img 
+        src="/paris.jpg" 
+        alt="Azizbek Saparbayev" 
+        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+    </div>
+  </div>
+
+  <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+    Hi, I'm <span class="text-gradient">Azizbek</span>.
+  </h1>
+
+  <p class="max-w-xl text-lg md:text-xl text-slate-400 leading-relaxed mb-10">
+    I am a developer and AI enthusiast based in Uzbekistan. My work focuses on building minimalist, high-performance web applications and intelligent systems.
+  </p>
+
+  <SocialButtons />
+</section>

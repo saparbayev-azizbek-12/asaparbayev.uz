@@ -1,0 +1,28 @@
+---
+const navItems = [
+  { name: 'About', href: '/' },
+  { name: 'Projects', href: '/projects' },
+];
+---
+
+<header class="sticky top-0 z-50 w-full glass">
+  <nav class="container-custom flex h-20 items-center justify-between">
+    <a href="/" class="text-xl font-bold tracking-tight hover:opacity-80 transition-opacity">
+      <span class="text-slate-100">Azizbek Saparbayev</span>
+    </a>
+    
+    <ul class="flex items-center gap-10">
+      {navItems.map((item) => (
+        <li>
+          <a 
+            href={item.href} 
+            class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+

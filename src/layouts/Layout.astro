@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "A simple minimalist developer project hub." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+		
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen bg-[#0a0a0a] text-slate-100">
+		<div class="relative min-h-screen">
+			<!-- Subtle dark glow -->
+			<div class="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-full max-w-4xl h-[600px] opacity-20 blur-[120px] bg-linear-to-b from-indigo-500/30 to-transparent pointer-events-none"></div>
+			
+			<slot />
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--accent: 99, 102, 241;
+		--accent-light: 199, 210, 254;
+		--accent-dark: 49, 46, 129;
+	}
+	
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		background: #0a0a0a;
+		color-scheme: dark;
+	}
+	
+	body {
+		margin: 0;
+		padding: 0;
+	}
+</style>
