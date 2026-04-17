@@ -13,17 +13,41 @@ const { title, description = "A simple minimalist developer project hub." } = As
 <html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="manifest" href="/manifest.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content="Azizbek Saparbayev, azizbek, saparbayev, Saparbayev Azizbek, web developer, software engineer" />
+		<meta name="author" content="Azizbek Saparbayev" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={new URL(Astro.url.pathname, "http://asaparbayev.uz").href} />
+
+		<!-- Google Search Console Verification -->
+		<meta name="google-site-verification" content="ADD_YOUR_VERIFICATION_CODE_HERE" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL("/og-image.png", Astro.url)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL("/og-image.png", Astro.url)} />
 		
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-		
-		<title>{title}</title>
+
 	</head>
 	<body class="min-h-screen bg-[#0a0a0a] text-slate-100">
 		<div class="relative min-h-screen">
